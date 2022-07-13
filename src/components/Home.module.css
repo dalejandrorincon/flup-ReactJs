@@ -1,0 +1,25 @@
+.divf{
+    display: flex;
+    justify-content: space-around;
+    border: black 2px solid;
+    height: 100vh;
+    
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+}
+
+table{
+    width: 600px;
+    border: 1px solid black;
+    margin-top: 20px;
+}
+
+th,td{
+    width: 25%;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 22px;
+}
