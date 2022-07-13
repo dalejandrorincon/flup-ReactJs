@@ -29,4 +29,4 @@ return (
         <button type='button' onClick={handleSubmit}>Buscar</button>
     </div>
 )
-}
+};

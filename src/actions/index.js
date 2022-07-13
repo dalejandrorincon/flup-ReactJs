@@ -9,3 +9,5 @@ export const getMovies = (titulo) => {
         });
     }; 
 };
+
+
