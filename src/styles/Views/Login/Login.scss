@@ -1,0 +1,33 @@
+.loginCard {
+
+  padding: 30px;
+  width: 600px;
+  border-radius: 15px;
+  background-color: #0FC2C0;
+  color: rgb(42, 42, 51);
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 20%) 0px 4px 5px -2px, rgb(0 0 0 / 14%) 0px 7px 10px 1px, rgb(0 0 0 / 12%) 0px 2px 16px 1px;
+  p{
+    font-size: 1.2em;
+  }
+  .navbar{
+    display: flex;
+    flex-flow: column;
+    .nav-link{
+      border: 1px solid white;
+      background-color: transparent;
+      width: 50%;
+      color: black;
+      &:hover{
+        background-color: white;
+      }
+    }
+  }
+  .btn-link{
+    background-color: white;
+    color: black;
+    &:hover{
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+  }
+}

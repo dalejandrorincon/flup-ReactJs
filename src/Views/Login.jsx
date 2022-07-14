@@ -8,43 +8,46 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const { loginUser } = useContext(UserContext);
+  const { user, loginUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await loginUser(email, password)
-      console.log("Sesión iniciada")
-      navigate("/")
+      console.log(user);
+      setTimeout(function(){
+        console.log("Sesión iniciada")
+        navigate("/")
+    }, 1000);
     } catch (error) {
       console.log(error.code);
     }
   }
   return (
-    <Container>
-      <Navbar>
-        <NavLink className="nav-link" to="/">Inicio</NavLink>
-        <NavLink className="nav-link" to="/signup">Sign up</NavLink>
-      </Navbar>
-      <h1>Login page</h1>
+    <Container className='loginCard mt-5'>
+      <p className='text-center mb-0'>Inicia sesión en </p>
+      <h1 className='text-center'>Flup</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label>Correo electrónico</Form.Label>
           <Form.Control type="email" placeholder="Enter email" onChange={(ev) => setEmail(ev.target.value)} />
           <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
+            Nunca compartiremos tu correo con nadie más.
           </Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>Contraseña</Form.Label>
           <Form.Control type="password" placeholder="Password" onChange={(ev) => setPassword(ev.target.value)} />
         </Form.Group>
-        <Button variant="primary" type='submit'>
+        <Button variant="link" type='submit'>
           Iniciar sesión
         </Button>
       </Form>
+      <Navbar>
+        <NavLink className="nav-link" to="/signup">Registro</NavLink>
+      </Navbar>
     </Container>
   )
 }

@@ -20,29 +20,29 @@ const Signup = () => {
     }
   }
   return (
-    <Container>
-      <Navbar>
-        <Link className="nav-link" to="/">Inicio</Link>
-        <Link className="nav-link" to="/login">Login</Link>
-      </Navbar>
-      <h1>Registro de usuario</h1>
+    <Container className="loginCard mt-5">
+      <p className="text-center mb-0">Registrate en</p>
+      <h1 className="text-center">Flup</h1>
       <Form onSubmit={handleOnSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label>Correo electrónico</Form.Label>
           <Form.Control type="email" placeholder="Enter email" onChange={(ev) => setEmail(ev.target.value)} />
           <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
+            Nunca compartiremos tu correo con nadie más.
           </Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>Contraseña</Form.Label>
           <Form.Control type="password" placeholder="Password" onChange={(ev) => setPassword(ev.target.value)} />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="link" type="submit">
           Crear cuenta
         </Button>
       </Form>
+      <Navbar>
+        <Link className="nav-link" to="/login">Iniciar sesión</Link>
+      </Navbar>
     </Container>
   )
 }
