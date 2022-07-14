@@ -20,8 +20,8 @@ export default function Searchbar() {
 	}
 	const handleSubmit = (e) =>{
 		e.preventDefault()
-		console.log(e.target.value)
-		if(e.target.value !== undefined){
+		console.log(wanted)
+		if(wanted !== ""){
 			dispatch(getMovies(wanted))
 		}
 	}
