@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import { Routes, Route } from "react-router-dom";
+/* -------------------------- importacion de vistas ------------------------- */
+import Home from "./Views/Home";
+import Login from "./Views/Login"
+import Signup from "./Views/Signup";
+/* ------------------------ Importacion del contexto ------------------------ */
+import RequireAuth from "./components/RequireAuth";
+import { useContext } from "react";
+import { UserContext } from "./context/UserProvider";
 
-function App() {
+
+const App = () => {
+  const {user} = useContext(UserContext);
+  if(user === false){
+    return <p>Cargando...</p>
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <Routes>
+          <Route exact path="/" element={
+            <RequireAuth>
+              <Home />
+            </RequireAuth>
+          } />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/signup" element={<Signup />} />
+        </Routes>
   );
 }
 
