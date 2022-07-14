@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 /* -------------------------- importacion de vistas ------------------------- */
 import Home from "./Views/Home";
 import Login from "./Views/Login"
@@ -10,7 +10,6 @@ import { UserContext } from "./context/UserProvider";
 
 
 const App = () => {
-  //const { registerUser } = useContext(UserContext);
   const {user} = useContext(UserContext);
   if(user === false){
     return <p>Cargando...</p>

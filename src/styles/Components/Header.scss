@@ -1,0 +1,67 @@
+// .divpadre{   
+//   justify-content: space-around;
+  
+// }
+.searchBar{
+  height: 45px;
+  .nav-item{
+    margin-left: 20px;
+    .nav-link{
+      background: none;
+      border: none;
+      border-radius: 0;
+      color: black;
+      &.active{
+        border-bottom: 2px solid #fbeb77;
+      }
+    }
+  }
+  .searchButton{
+    background: #fbeb77;
+    border-radius: 0 15px 15px 0;
+    border: none;
+    padding: 10px 25px;
+  }
+}
+
+.navBar{
+  padding: 0 25px; 
+}
+
+.divflup{
+  h1{
+    font-size: 3.5em;
+    text-align: center;
+  }
+}
+
+h2{
+  display: flex;
+  justify-content: left;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+a{
+  font-weight: 700;     
+  background-color: rgba(82, 82, 82, 0.3);
+  width: 95%;
+  border-radius: 8px;
+  margin: 5px auto;
+  text-align: center;    
+  padding: 15px 20px;
+  
+}
+
+label{
+  color: black;
+}
+
+.contenedores{
+  display: flex;
+  padding: 0;
+  margin: 20px 0;
+  flex-direction: column;
+  justify-content: center;
+}
+

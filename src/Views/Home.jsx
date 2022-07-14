@@ -1,24 +1,42 @@
-import { useContext } from "react";
-import { Container, Navbar, Nav } from "react-bootstrap";
-import { UserContext } from "../context/UserProvider";
+import React from 'react'
+import { useSelector } from 'react-redux';
+import { Container, Row, Col } from "react-bootstrap";
+/* ----------------------- Componentes de presentación ---------------------- */
+import SearchBar from '../components/SearchBar';
+import Nav from '../components/Nav';
+import ItemMovie from '../components/ItemMovie';
 
 const Home = () => {
-  const {signOutUser} = useContext(UserContext);
-  const handleClickLogout = async() => {
-    try {
-      await signOutUser()
-    } catch (error) {
-      console.log(error.code)
-    }
-  }
-  return(
-    <Container>
-      <Navbar>
-        <Nav>
-          <button onClick={handleClickLogout}>Cerrar sesión</button>
-        </Nav>
-      </Navbar>
-      <h1>Home</h1>
+  const data = useSelector(state => state.movies);
+
+  return (
+    <Container fluid className='homeContainer'>
+      <Row>
+        <Col md={3} className='Nav'>
+          <Nav />
+        </Col>
+        <Col md={9}>
+          <Container>
+            <SearchBar />
+            <Container>
+              <table className='table table-striped table-bordered'>
+                <thead className='text-center'>
+                  <tr>
+                    <th>Codigo</th>
+                    <th>Titulo</th>
+                    <th>Año</th>
+                  </tr>
+                </thead>
+                <tbody className='text-center'>
+                  {data.map((item) => (<ItemMovie item={item} key={item.imdbID} />))}
+                </tbody>
+              </table>
+            </Container>
+          </Container>
+        </Col>
+      </Row>
+
+
     </Container>
   )
 }
